@@ -1,0 +1,64 @@
+.nav-items-container
+{
+    display: flex;
+}
+.cart-count-badge
+{
+    background-color: black;
+    color: white;
+    font-family: "Roboto";
+    font-size: 14px;
+    font-weight: 500;
+    border-radius: 50%;
+    margin-left: 8px;
+    padding: 5px 6px;
+}
+.nav-link
+{
+    text-decoration: none;
+    color: black;
+}
+.icon-container
+{
+    display: flex;
+    align-items: center;
+    margin-left: 20px;
+}
+.icon-name
+{
+    display: none;
+}
+.header-container
+{
+    display: flex;
+    justify-content: center;
+    background-color: #ffe619;
+}
+.header-content-container
+{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 20px;
+    width: 90%;
+    max-width: 1200px;
+}
+.logo-container
+{
+    display: flex;
+    align-items: center;
+}
+.logo
+{
+    width: 30px;
+    height: 40px;
+    border: 1px solid;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Roboto";
+    font-weight: 500;
+    margin: 10px;
+}
