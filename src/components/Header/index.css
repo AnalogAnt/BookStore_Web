@@ -62,3 +62,11 @@
     font-weight: 500;
     margin: 10px;
 }
+
+@media screen and (min-width:768px){
+    .icon-name
+    {
+        display: inline;
+        margin-left: 5px;
+    }
+}
