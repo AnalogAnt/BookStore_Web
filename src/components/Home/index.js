@@ -1,4 +1,5 @@
 import { Component } from "react";
+import {Link} from "react-router-dom";
 import Header from "../Header"
 import "./index.css"
 class Home extends Component
@@ -20,7 +21,9 @@ class Home extends Component
                         collective dfadlkf a df a l fd afd kdsf a dkafjldk lkfdka  kd
                         kfjdla  kfdjalef jkja f8rh ta dsfaj j ieuf j.
                     </p>
-                    <button className="explore-button">Explore Books</button>
+                    <Link to="/books">
+                        <button className="explore-button">Explore Books</button>
+                    </Link>
                 </div>
             </div></>
         );
