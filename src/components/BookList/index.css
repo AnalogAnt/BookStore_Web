@@ -1,0 +1,32 @@
+.booksPage
+{
+    padding: 20px;
+}
+.searchInput-container
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.search-input
+{
+    width:200px;
+    max-height: 30px;
+}
+.booklist-content-container
+{
+    display: flex;
+    flex-direction: row;
+}
+.filters-container
+{
+    width:10%; 
+}
+.booksList-container
+{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 90%;
+}
