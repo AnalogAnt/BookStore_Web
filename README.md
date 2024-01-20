@@ -1,6 +1,5 @@
 # Title
-    
-    ReactJS Full Stack Application - Interactive Bookstore Application
+ ReactJS Full Stack Application - Interactive Bookstore Application
 
 ## Objective
     To develop an interactive bookstore application using ReactJS. The application allows users to browse and search for books, view book details, add books to a shopping cart, and place an order.
