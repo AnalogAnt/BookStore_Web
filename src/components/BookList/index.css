@@ -30,3 +30,40 @@
     flex-wrap: wrap;
     width: 90%;
 }
+.priceFilterCon
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+.inputt 
+{
+    width: 50px;
+    margin: 10px;
+    text-align: center;
+}
+.applyButt
+{
+    text-align: center;
+    padding: 10px;
+    width: 50%;
+    margin:2px;
+    font-weight: bold;
+    background-color: #ffe619;
+    border-color: #ffe619;
+    border-radius: 10px;
+}
+.loading-con
+{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+.filterButtonsContainer
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding: 20px;
+}

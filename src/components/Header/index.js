@@ -1,10 +1,13 @@
 import { Component } from "react";
 import {Link} from 'react-router-dom'
-import {FaBook,FaShoppingBag} from "react-icons/fa"
+import {FaBook,FaShoppingBag,FaUser} from "react-icons/fa"
 
 import "./index.css"
 class Header extends Component
 {
+    onClickUser = ()=>
+    {
+    }
     render()
     {
         return(
@@ -12,7 +15,7 @@ class Header extends Component
                 <div className="header-content-container">
                     <Link to="/" className="nav-link">
                     <div className="logo-container">
-                        <div className="logo">B</div>BOOKSTORE
+                        <div className="logo">WB</div>WordBox
                     </div>
                     </Link>
                     
@@ -20,15 +23,20 @@ class Header extends Component
                         <Link to="/books" className="nav-link">
                         <li className="icon-container">
                             <FaBook className="icon" />
-                            <span className="icon-name">Book List</span>
+
                         </li>
                         </Link>
                         <Link to="/cart" className="nav-link">
                         <li className="icon-container">
                             <FaShoppingBag className="icon" />
-                            <span className="icon-name">Shopping Bag</span>
+
                         </li>
                         </Link>
+                        
+                        <li className="icon-container">
+                            <button type="button" onClick={this.onClickUser} className="userIconButton"><FaUser className="icon" /></button>
+                            
+                        </li>
                     </ul>
                 </div>
             </nav>

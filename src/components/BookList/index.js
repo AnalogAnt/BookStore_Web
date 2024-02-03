@@ -1,10 +1,12 @@
 import { Component } from "react";
-import Slider from 'rc-slider';
 import Header from "../Header"
 import BookItem from "../BookItem";
+import {LineWave} from "react-loader-spinner"
+import 'rc-slider/assets/index.css';
 import "./index.css"
+
 class BookList extends Component {
-    state = { isLoading: false, booksList: [], searchInput: "", error: false };
+    state = { isLoading: false, booksList: [], searchInput: "", error: false,minValue:"0",maxValue:"100",filteredBooks:[]};
 
 
     componentDidMount()
@@ -43,20 +45,51 @@ class BookList extends Component {
 
     }
     
-    onFilterChange = (event)=>
+    onFilterChange = ()=>
     {
-        const {booksList}= this.state;
-        const filteredBooksist = booksList.books.filter((each)=>(each.price>event.target.value));
-        this.setState({booksList:filteredBooksist});
+        const {booksList,minValue,maxValue}= this.state;
+        const filteredBooksist = booksList.filter((each)=>( parseFloat(each.price.slice(1,each.price.length))>=parseFloat(minValue) && parseFloat(each.price.slice(1,each.price.length))<=parseFloat(maxValue)))
+        this.setState({filteredBooks:filteredBooksist});
+    }
+
+    onFilterReset = ()=>
+    {
+        this.setState({minValue:"0",maxValue:"100",filteredBooks:[]})
+    }
+
+    onMinChange = (event)=>
+    {
+        this.setState({minValue:event.target.value})
+    }
+
+    onMaxChange=(event)=>
+    {
+        this.setState({maxValue:event.target.value})
     }
 
     render() {
-        const { booksList, isLoading, searchInput, error } = this.state;
+        const { booksList, isLoading, searchInput, error ,minValue,maxValue,filteredBooks} = this.state;
+        let renderBooksList
+        
+        if(filteredBooks.length!==0)
+        {
+            renderBooksList=filteredBooks
+        }
+        else
+        {
+            renderBooksList = booksList
+        }
         let component;
         if(isLoading)
         {
-            component=(<div>
-                <h1>Loading...</h1>
+            component=(<div className="loading-con">
+                <LineWave
+  visible={true}
+  height="100"
+  width="100"
+  color="#ffe619"
+  ariaLabel="line-wave-loading"
+  />
             </div>)
             
         }
@@ -82,10 +115,19 @@ class BookList extends Component {
                     <div className="booklist-content-container">
                         <div className="filters-container">
                             <p className="filter-label">Filters</p>
-                            <Slider range min={0} max={2000} value={[0,10000]} onChange={this.onFilterChange}/>
+                            <div className="priceFilterCon">
+                                <p>Price</p>
+                            <input value={minValue} placeholder="0" type="text" onChange={this.onMinChange} className="inputt" />
+                            <input value={maxValue} type="text" placeholder="100" onChange={this.onMaxChange} className="inputt" />
+                            
+                            </div>
+                            <div className="filterButtonsContainer">
+                            <button onClick={this.onFilterChange} type="button" className="applyButt">Apply</button>
+                            <button onClick={this.onFilterReset} type="button" className="applyButt">Reset</button>
+                            </div>
                         </div>
                         <div className="booksList-container">
-                            {booksList.map((eachBook) => (<BookItem details={eachBook} key={eachBook.isbn13}/>))}
+                            {renderBooksList.map((eachBook) => (<BookItem details={eachBook} key={eachBook.isbn13}/>))}
                         </div>
                     </div>
                 </div>)
