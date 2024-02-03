@@ -12,7 +12,8 @@
 .search-input
 {
     width:200px;
-    max-height: 30px;
+    height: 30px;
+    border: solid 2px;
 }
 .booklist-content-container
 {
@@ -66,4 +67,16 @@
     flex-direction: row;
     justify-content: space-evenly;
     padding: 20px;
+}
+.searchButton
+{
+    background-color: transparent;
+    
+    font-size: 20px;
+}
+.searchContainer 
+{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
 }

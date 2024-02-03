@@ -1,6 +1,7 @@
 import { Component } from "react";
 import Header from "../Header"
 import BookItem from "../BookItem";
+import {FaSearch} from "react-icons/fa"
 import {LineWave} from "react-loader-spinner"
 import 'rc-slider/assets/index.css';
 import "./index.css"
@@ -17,15 +18,16 @@ class BookList extends Component {
 
     getBooks = async () => {
         this.setState({ isLoading: true });
-        const { searchInput } = this.state;
+        const {searchInput} = this.state
         const options = { method: 'GET' };
         let response;
-        if (searchInput === "") {
-            response = await fetch("https://api.itbook.store/1.0/new", options);
-            
+        if(searchInput.length!==0)
+        {
+            response=await fetch(`https://api.itbook.store/1.0/search/${searchInput}`, options);
         }
-        else {
-            response = await fetch(`https://api.itbook.store/1.0/search/${searchInput}`, options);
+        else
+        {
+            response = await fetch("https://api.itbook.store/1.0/new", options)
         }
         if (response.ok) {
             const Booksdata = await response.json();
@@ -66,6 +68,8 @@ class BookList extends Component {
     {
         this.setState({maxValue:event.target.value})
     }
+
+   
 
     render() {
         const { booksList, isLoading, searchInput, error ,minValue,maxValue,filteredBooks} = this.state;
@@ -110,7 +114,10 @@ class BookList extends Component {
                     
                     <div className="searchInput-container">
                     <h1 className="book-label">Books</h1>
+                      <div className="searchContainer">
                         <input value={searchInput} type="search" onChange={this.onSearchInputChange} placeholder="Search" className="search-input"/>
+                        <button className="searchButton" type="button" onClick={this.getBooks}><FaSearch className="searchIcon" /></button>
+                    </div>
                     </div>
                     <div className="booklist-content-container">
                         <div className="filters-container">
