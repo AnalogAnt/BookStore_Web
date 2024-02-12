@@ -1,9 +1,9 @@
-.banner-container
-{
-    display:  flex;
+.banner-container {
+    display: flex;
     justify-content: center;
 }
-.banner-content-container{
+
+.banner-content-container {
     width: 90%;
     max-width: 1200px;
     font-size: 18px;
@@ -15,19 +15,18 @@
     box-sizing: border-box;
     padding-top: 30px;
 }
-.banner-text
-{
+
+.banner-text {
     font-family: "Roboto";
     font-size: 22px;
 }
 
-.explore-button
-{
+.explore-button {
     padding: 14px;
     background-color: black;
     font-size: 15px;
-    color:white;
-    border:none;
+    color: white;
+    border: none;
     border-radius: 10px;
     cursor: pointer;
 }

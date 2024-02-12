@@ -1,11 +1,10 @@
-.nav-items-container
-{
+.nav-items-container {
     display: flex;
     justify-content: space-evenly;
     gap: 20px;
 }
-.cart-count-badge
-{
+
+.cart-count-badge {
     background-color: black;
     color: white;
     font-family: "Roboto";
@@ -15,29 +14,29 @@
     margin-left: 8px;
     padding: 5px 6px;
 }
-.nav-link
-{
+
+.nav-link {
     text-decoration: none;
     color: black;
 }
-.icon-container
-{
+
+.icon-container {
     display: flex;
     align-items: center;
     margin-left: 20px;
 }
-.icon-name
-{
+
+.icon-name {
     display: none;
 }
-.header-container
-{
+
+.header-container {
     display: flex;
     justify-content: center;
     background-color: #ffe619;
 }
-.header-content-container
-{
+
+.header-content-container {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -47,13 +46,13 @@
     width: 90%;
     max-width: 1200px;
 }
-.logo-container
-{
+
+.logo-container {
     display: flex;
     align-items: center;
 }
-.logo
-{
+
+.logo {
     width: 30px;
     height: 40px;
     border: 1px solid;
@@ -63,18 +62,17 @@
     font-family: "Roboto";
     font-weight: 500;
     margin: 10px;
-    padding:10px;
+    padding: 10px;
 }
 
-@media screen and (min-width:768px){
-    .icon-name
-    {
+@media screen and (min-width:768px) {
+    .icon-name {
         display: inline;
         margin-left: 5px;
     }
 }
-.userIconButton
-{
+
+.userIconButton {
     background-color: transparent;
     border: none;
     font-size: 20px;

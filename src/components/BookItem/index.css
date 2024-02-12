@@ -1,6 +1,5 @@
-.bookItem-container
-{
-    width:300px;
+.bookItem-container {
+    width: 300px;
     margin-left: 30px;
 
     display: flex;
@@ -8,15 +7,20 @@
     align-items: center;
     text-align: center;
 }
-.bookItem-title
-{
+
+.bookItem-title {
     font-size: 18px;
 }
-.bookItem-subtitle
-{
+
+.bookItem-subtitle {
     font-size: 12px;
 }
-.bookItem-price
-{
+
+.bookItem-price {
     font-size: 20px;
+}
+
+.link {
+    color: black;
+    text-decoration: none;
 }

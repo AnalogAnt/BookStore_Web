@@ -1,81 +1,80 @@
-.booksPage
-{
+.booksPage {
     padding: 20px;
 }
-.searchInput-container
-{
+
+.searchInput-container {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
 }
-.search-input
-{
-    width:200px;
+
+.search-input {
+    width: 200px;
     height: 30px;
     border: solid 2px;
 }
-.booklist-content-container
-{
+
+.booklist-content-container {
     display: flex;
     flex-direction: row;
 }
-.filters-container
-{
-    width:20%; 
+
+.filters-container {
+    width: 20%;
 }
-.booksList-container
-{
+
+.booksList-container {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     width: 90%;
 }
-.priceFilterCon
-{
+
+.priceFilterCon {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
 }
-.inputt 
-{
+
+.inputt {
     width: 50px;
     margin: 10px;
     text-align: center;
 }
-.applyButt
-{
+
+.applyButt {
     text-align: center;
     padding: 10px;
     width: 50%;
-    margin:2px;
+    margin: 2px;
     font-weight: bold;
     background-color: #ffe619;
     border-color: #ffe619;
     border-radius: 10px;
 }
-.loading-con
-{
+
+.loading-con {
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
 }
-.filterButtonsContainer
-{
+
+.filterButtonsContainer {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
     padding: 20px;
 }
-.searchButton
-{
+
+.searchButton {
     background-color: transparent;
-    
+
     font-size: 20px;
 }
-.searchContainer 
-{
+
+.searchContainer {
     display: flex;
     flex-direction: row;
     align-items: center;
