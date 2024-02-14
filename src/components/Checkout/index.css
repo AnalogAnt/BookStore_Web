@@ -1,0 +1,30 @@
+.checkout-page
+{
+    height: 100vh;
+    background-size:cover;
+}
+
+.checkout-logo-container
+{
+    background-color: #ffe619;
+    height: 10vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-end;
+    padding: 25px;
+    gap:20px;
+    font-weight: bold;
+}
+.checkout-logo {
+    width: 30px;
+    height: 40px;
+    border: 1px solid;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Roboto";
+    font-weight: 500;
+
+    padding: 10px;
+}

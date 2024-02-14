@@ -1,7 +1,7 @@
 # Title
  WordBox  - Interactive Bookstore Application
- Username:- rahul
- Password:- rahul@2021
+    Username:- rahul
+    Password:- rahul@2021
 
 ## Objective
  To develop an interactive bookstore application using ReactJS. The application allows users to browse and search for books, view book details, add books to a shopping cart, and place an order.
