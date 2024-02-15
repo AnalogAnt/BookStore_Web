@@ -34,14 +34,11 @@ class Checkout extends Component
         }
         else
         {
-            component= (<><div className="form-container">
+            component= (<div className="form-container">
                 <form className="checkout-form">
                     <h1 className="input-header">Contact</h1>
                     <input type="email" placeholder="Email" className="email-input" />
                     <h1 className="input-header">Shipping address</h1>
-                    <div className="country-container">
-                        <p className="country">India</p>
-                    </div>
                     <div className="names-container">
                         <input type="text" placeholder="First name" value={username} onChange={this.onNameInput} className="name-input" />
                         <input type="text" placeholder="Last name" className="name-input" />
@@ -51,14 +48,15 @@ class Checkout extends Component
                     <div className="address-specific-container">
                         <input type="text" placeholder="City" className="address-specific-input" />
                         <input type="text" placeholder="State" className="address-specific-input" />
-                        <input type="number" placeholder="PIN code" className="address-specific-input" />
+                        <input type="text" placeholder="PIN code" className="address-specific-input" />
                     </div>
-                    <input type="number" placeholder="Number" className="address-input" />
+                    <input type="text" placeholder="Phone" className="address-input" />
                     <button type="submit" className="place-order-button" onClick={this.placeOrder}>Place Order</button>
                 </form>
-            </div><div className="order-summary-container">
-
-                </div></>
+                <div className="order-summary-container">
+                    <h1>Hi</h1>
+                </div>
+            </div>
 
             )
         }
