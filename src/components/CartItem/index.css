@@ -1,0 +1,27 @@
+.cart-image {
+    height: 200px;
+    width: 150px;
+}
+
+.cart-item {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    border: 1px solid black;
+    border-radius: 5px;
+    width: 50vw;
+    margin: 10px;
+    height: 150px;
+    align-items: center;
+}
+
+.cart-title {
+    font-size: 15px;
+}
+
+.delete-button {
+    background-color: transparent;
+    padding: 5px;
+    border: 1px solid black;
+    font-size: 10px;
+}

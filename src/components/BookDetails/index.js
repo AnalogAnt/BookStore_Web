@@ -1,9 +1,10 @@
 import { Component } from "react";
 import { LineWave } from "react-loader-spinner"
 import Header from "../Header";
+import CartContext from "../../context/CartContext";
 import "./index.css"
 class BookDetails extends Component {
-    state = { bookDetails: {}, isLoading: false }
+    state = { bookDetails: {}, isLoading: false}
 
     componentDidMount() {
         this.getBookDetails();
@@ -21,9 +22,51 @@ class BookDetails extends Component {
         this.setState({ bookDetails: data, isLoading: false });
     }
 
+    renderDetailsView = ()=>
+    (
+        <CartContext.Consumer>
+        {value=>
+        {
+            const {addCartItem} = value
+            const {bookDetails} = this.state
+            const { image, title, subtitle, authors, price, year, rating, desc } = bookDetails;
+            const addToCart = ()=>
+            {
+                addCartItem({...bookDetails})
+            }
+            return(<div className="bookDetailsContainer">
+            <div className="bookCoverPage">
+                <img src={image} className="bookCover" alt="book-cover" />
+            </div>
+            <div className="bookDetails">
+                <div className="titleCon">
+                    <h1 className="bookTitle">{title}</h1>
+                    <p className="subTitle">{subtitle}</p>
+                    <h1 className="authors">{authors}</h1>
+                    <p className="releaseYear">Released In : {year}</p>
+                </div>
+                <div className="priceAndRatingCon">
+                    <h1 className="price">{price}</h1>
+                    <p className="rating">Rating: {rating}</p>
+                </div>
+                <div className="addToCartButtonContainer">
+                    <button onClick={addToCart} className="addToCartButton" type="button" >Add to Cart</button>
+                </div>
+                <hr />
+                <div className="descriptionCon">
+                    <h1>Description</h1>
+                    <p className="desc">{desc}</p>
+                </div>
+            </div>
+        </div>)
+        }}
+    </CartContext.Consumer>
+
+    )
+
     render() {
-        const { bookDetails, isLoading } = this.state;
-        const { image, title, subtitle, authors, price, year, rating, desc } = bookDetails;
+        const {isLoading } = this.state;
+        
 
         let component
         if (isLoading) {
@@ -38,32 +81,9 @@ class BookDetails extends Component {
             </div>)
         }
         else {
-            component = <div className="bookDetailsContainer">
-                <div className="bookCoverPage">
-                    <img src={image} className="bookCover" alt="book-cover" />
-                </div>
-                <div className="bookDetails">
-                    <div className="titleCon">
-                        <h1 className="bookTitle">{title}</h1>
-                        <p className="subTitle">{subtitle}</p>
-                        <h1 className="authors">{authors}</h1>
-                        <p className="releaseYear">Released In : {year}</p>
-                    </div>
-                    <div className="priceAndRatingCon">
-                        <h1 className="price">{price}</h1>
-                        <p className="rating">Rating: {rating}</p>
-                    </div>
-                    <div className="addToCartButtonContainer">
-                        <button className="addToCartButton" type="button" >Add to Cart</button>
-                    </div>
-                    <hr />
-                    <div className="descriptionCon">
-                        <h1>Description</h1>
-                        <p className="desc">{desc}</p>
-                    </div>
-                </div>
-            </div>
+            component = this.renderDetailsView()
         }
+        console.log()
         return (
             <div>
                 <Header />
@@ -71,6 +91,9 @@ class BookDetails extends Component {
             </div>
         );
     }
+
+    
+    
 }
 
 export default BookDetails;

@@ -1,7 +1,6 @@
 import { Link, withRouter } from 'react-router-dom'
 import Cookies from 'js-cookie'
 import { FaBook, FaShoppingBag, FaArrowRight } from "react-icons/fa"
-
 import "./index.css"
 const Header = (props) => {
     const { history } = props
@@ -29,18 +28,20 @@ const Header = (props) => {
                     <Link to="/cart" className="nav-link">
                         <li className="icon-container">
                             <FaShoppingBag className="icon" />
-
+                            <span className='cart-count'></span>
                         </li>
                     </Link>
 
                     <li className="icon-container">
-                        <button type="button" onClick={onClickUser} className="userIconButton">< FaArrowRight className="icon" /></button>
+                        <button type="button" onClick={onClickUser} className="logoutIconButton">< FaArrowRight className="icon" /></button>
 
                     </li>
                 </ul>
             </div>
         </nav>
+
     )
+
 }
 
 export default withRouter(Header)

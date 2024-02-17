@@ -11,7 +11,6 @@
     font-size: 14px;
     font-weight: 500;
     border-radius: 50%;
-    margin-left: 8px;
     padding: 5px 6px;
 }
 
@@ -32,6 +31,7 @@
 
 .header-container {
     display: flex;
+    align-items: center;
     justify-content: center;
     background-color: #ffe619;
 }
@@ -72,7 +72,7 @@
     }
 }
 
-.userIconButton {
+.logoutIconButton {
     background-color: transparent;
     border: none;
     font-size: 20px;
