@@ -2,9 +2,10 @@ import { Component } from "react";
 import { LineWave } from "react-loader-spinner"
 import Header from "../Header";
 import CartContext from "../../context/CartContext";
+import {BsPlusSquare, BsDashSquare} from 'react-icons/bs'
 import "./index.css"
 class BookDetails extends Component {
-    state = { bookDetails: {}, isLoading: false}
+    state = { bookDetails: {}, isLoading: false,quantity:1}
 
     componentDidMount() {
         this.getBookDetails();
@@ -22,18 +23,30 @@ class BookDetails extends Component {
         this.setState({ bookDetails: data, isLoading: false });
     }
 
+
     renderDetailsView = ()=>
     (
         <CartContext.Consumer>
         {value=>
         {
             const {addCartItem} = value
-            const {bookDetails} = this.state
+            const {bookDetails,quantity} = this.state
             const { image, title, subtitle, authors, price, year, rating, desc } = bookDetails;
             const addToCart = ()=>
             {
-                addCartItem({...bookDetails})
+                const {quantity} = this.state
+                addCartItem({...bookDetails, quantity: quantity})
             }
+            const onDecrementQuantity = () => {
+                const {quantity} = this.state
+                if (quantity > 1) {
+                  this.setState(prevState => ({quantity: prevState.quantity - 1}))
+                }
+              }
+            
+            const  onIncrementQuantity = () => {
+                this.setState(prevState => ({quantity: prevState.quantity + 1}))
+              }
             return(<div className="bookDetailsContainer">
             <div className="bookCoverPage">
                 <img src={image} className="bookCover" alt="book-cover" />
@@ -51,6 +64,23 @@ class BookDetails extends Component {
                 </div>
                 <div className="addToCartButtonContainer">
                     <button onClick={addToCart} className="addToCartButton" type="button" >Add to Cart</button>
+                </div>
+                <div className="quantity-container">
+                  <button
+                    type="button"
+                    className="quantity-controller-button"
+                    onClick={onDecrementQuantity}
+                  >
+                    <BsDashSquare className="quantity-controller-icon" />
+                  </button>
+                  <p className="quantity">{quantity}</p>
+                  <button
+                    type="button"
+                    className="quantity-controller-button"
+                    onClick={onIncrementQuantity}
+                  >
+                    <BsPlusSquare className="quantity-controller-icon" />
+                  </button>
                 </div>
                 <hr />
                 <div className="descriptionCon">

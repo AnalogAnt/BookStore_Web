@@ -62,9 +62,12 @@
 
 .form-container {
     text-align: center;
+    display: flex;
+    flex-direction: column;
 }
 
 .hrule {
     background-color: #ffe619;
     border: 1px solid;
+    width: 400px;
 }

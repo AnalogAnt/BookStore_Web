@@ -13,11 +13,15 @@ const Cart = (props) => {
     return (
         <CartContext.Consumer>
             {value => {
-                const { cartList } = value
+                const { cartList,removeAllCartItems} = value
                 let totalAmount = 0
                 cartList.forEach(eachCartItem => {
                     totalAmount += parseFloat(eachCartItem.price.slice(1, eachCartItem.price.length))
                 })
+                const onRemoveAll= ()=>
+                {
+                    removeAllCartItems();
+                }
                 const showEmptyView = cartList.length === 0
                 return (<div >
                     <Header />
@@ -27,6 +31,7 @@ const Cart = (props) => {
                                 <div>
                                     <h1 className="cart-head">My Bag</h1>
                                     <CartList />
+                                    <button className="remove-all" onClick={onRemoveAll} type="button">Remove All</button>
                                 </div>
                                 <hr />
                                 <div className="order-summary-container">
