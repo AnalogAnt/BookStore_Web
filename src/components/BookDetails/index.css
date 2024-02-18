@@ -28,29 +28,30 @@
     width: 150px;
     border-radius: 10px;
 }
+
 .quantity-container {
     display: flex;
     align-items: center;
-  }
-  
-  .quantity-controller-button {
+}
+
+.quantity-controller-button {
     background: transparent;
     border: none;
     outline: none;
     cursor: pointer;
-  }
-  
-  .quantity-controller-icon {
+}
+
+.quantity-controller-icon {
     color: #616e7c;
     width: 16px;
     height: 16px;
-  }
-  
-  .quantity {
+}
+
+.quantity {
     color: #616e7c;
     font-family: 'Roboto';
     font-size: 20px;
     font-weight: 500;
     margin-left: 24px;
     margin-right: 24px;
-  }
+}

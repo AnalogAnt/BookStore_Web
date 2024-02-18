@@ -25,29 +25,31 @@
     border: 1px solid black;
     font-size: 10px;
 }
+
 .cart-quantity-container {
     display: flex;
     align-items: center;
-  }
-  
-  .quantity-controller-button {
+}
+
+.quantity-controller-button {
     padding: 0;
-  }
-  
-  .cart-quantity {
+}
+
+.cart-quantity {
     color: #52606d;
     font-family: 'Roboto';
     font-size: 15px;
     font-weight: 500;
     margin: 8px;
     line-height: 1.3;
-  }
-  .total-price-remove-container {
+}
+
+.total-price-remove-container {
     display: flex;
     align-items: center;
-  }
-  
-  .cart-total-price {
+}
+
+.cart-total-price {
     color: black;
     font-family: 'Roboto';
     font-size: 16px;
@@ -55,12 +57,12 @@
     margin-top: 0;
     margin-bottom: 0;
     min-width: 100px;
-  }
+}
 
-  .delete-button {
+.delete-button {
     background-color: transparent;
     border: none;
     outline: none;
     cursor: pointer;
     margin-left: 32px;
-  }
+}

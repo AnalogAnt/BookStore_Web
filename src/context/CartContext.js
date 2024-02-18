@@ -4,9 +4,9 @@ const CartContext = React.createContext({
     cartList: [],
     addCartItem: () => { },
     deleteCartItem: () => { },
-    incrementCartItemQuantity: () => {},
-  decrementCartItemQuantity: () => {},
-  removeAllCartItems: () => {},
+    incrementCartItemQuantity: () => { },
+    decrementCartItemQuantity: () => { },
+    removeAllCartItems: () => { },
 })
 
 export default CartContext

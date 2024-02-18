@@ -13,13 +13,12 @@ const Cart = (props) => {
     return (
         <CartContext.Consumer>
             {value => {
-                const { cartList,removeAllCartItems} = value
+                const { cartList, removeAllCartItems } = value
                 let totalAmount = 0
                 cartList.forEach(eachCartItem => {
                     totalAmount += parseFloat(eachCartItem.price.slice(1, eachCartItem.price.length))
                 })
-                const onRemoveAll= ()=>
-                {
+                const onRemoveAll = () => {
                     removeAllCartItems();
                 }
                 const showEmptyView = cartList.length === 0

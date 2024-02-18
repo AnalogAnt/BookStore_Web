@@ -27,7 +27,7 @@ class App extends Component {
   }
 
   removeAllCartItems = () => {
-    this.setState({cartList: []})
+    this.setState({ cartList: [] })
   }
 
   incrementCartItemQuantity = isbn13 => {
@@ -35,7 +35,7 @@ class App extends Component {
       cartList: prevState.cartList.map(eachCartItem => {
         if (isbn13 === eachCartItem.isbn13) {
           const updatedQuantity = eachCartItem.quantity + 1
-          return {...eachCartItem, quantity: updatedQuantity}
+          return { ...eachCartItem, quantity: updatedQuantity }
         }
         return eachCartItem
       }),
@@ -43,16 +43,16 @@ class App extends Component {
   }
 
   decrementCartItemQuantity = isbn13 => {
-    const {cartList} = this.state
+    const { cartList } = this.state
 
     const productObject = cartList.find(eachCartItem => (eachCartItem.isbn13 === isbn13))
-    
+
     if (productObject.quantity > 1) {
       this.setState(prevState => ({
         cartList: prevState.cartList.map(eachCartItem => {
           if (isbn13 === eachCartItem.isbn13) {
             const updatedQuantity = eachCartItem.quantity - 1
-            return {...eachCartItem, quantity: updatedQuantity}
+            return { ...eachCartItem, quantity: updatedQuantity }
           }
           return eachCartItem
         }),
@@ -65,9 +65,11 @@ class App extends Component {
   render() {
     const { cartList } = this.state
     return (
-      <CartContext.Provider value={{ cartList, addCartItem: this.addCartItem, deleteCartItem: this.deleteCartItem, incrementCartItemQuantity: this.incrementCartItemQuantity,
+      <CartContext.Provider value={{
+        cartList, addCartItem: this.addCartItem, deleteCartItem: this.deleteCartItem, incrementCartItemQuantity: this.incrementCartItemQuantity,
         decrementCartItemQuantity: this.decrementCartItemQuantity,
-        removeAllCartItems: this.removeAllCartItems, }}>
+        removeAllCartItems: this.removeAllCartItems,
+      }}>
         <Switch>
           <Route exact path="/login" component={LoginForm} />
           <Route exact path="/" component={Home} />
