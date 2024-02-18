@@ -16,8 +16,9 @@ const Cart = (props) => {
                 const { cartList, removeAllCartItems } = value
                 let totalAmount = 0
                 cartList.forEach(eachCartItem => {
-                    totalAmount += parseFloat(eachCartItem.price.slice(1, eachCartItem.price.length))
+                    totalAmount += (parseFloat(eachCartItem.price.slice(1, eachCartItem.price.length)) * eachCartItem.quantity)
                 })
+                totalAmount = totalAmount.toFixed(2);
                 const onRemoveAll = () => {
                     removeAllCartItems();
                 }

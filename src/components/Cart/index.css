@@ -41,3 +41,10 @@
 .amount-para {
     font-weight: bold;
 }
+.remove-all
+{
+    background-color: #ffe619;
+    padding: 10px;
+    font-size: 10px;
+    border-radius: 5px;
+}

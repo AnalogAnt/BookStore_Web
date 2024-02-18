@@ -20,7 +20,7 @@ const CartItem = (props) =>
             const onClickIncrement = () => {
                 incrementCartItemQuantity(isbn13)
             }
-            const totalPrice = parseFloat(price.slice(1, price.length)) * quantity
+            const totalPrice = (parseFloat(price.slice(1, price.length)) * quantity).toFixed(2);
             return (
                 <div className="cart-item">
                     <img src={image} className="cart-image" alt="book-cover" />
