@@ -11,7 +11,7 @@ const BookItem = (props) => {
                 <div className="bookItem-content-container">
                     <p className="bookItem-title">{title}</p>
                     <p className="bookItem-subtitle">-{subtitle}</p>
-                    <p className="bookItem-price">{price}</p>
+                    <p className="bookItem-prices">{price}</p>
                 </div>
             </div>
         </Link>
